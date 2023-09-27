@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Schedule Times{% endblock %}
+{% block content %}<h1>Select an Available Time</h1>
+{% for i in times: %}
+<div>
+	<button type="submit" onClick="addTime({{ i }})">{{ i }}</button>
+</div>
+{% endfor %}
+{% endblock %}

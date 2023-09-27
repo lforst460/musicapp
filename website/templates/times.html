@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Schedule Times{% endblock %}
+{% block content %}<h1>Select a Date to Add to Calendar</h1>
+<div>
+{% for i in next_month %}
+	<h3>{{ i }}</h3>
+	{% for j in times %}
+	<button type="submit" onClick="addTime([ '{{ j }}', {{ i[0] }}, {{ i[1] }}, {{ i[2] }}, {{ i[3] }} ])">{{ j }}</button>	
+	{% endfor %}
+{% endfor %}
+</div>
+{% endblock %}

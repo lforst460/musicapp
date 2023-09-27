@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Your Available Times{% endblock %}
+{% block content %}<h1>Select a Date to Add to Calendar</h1>
+<div>
+{% for i in times %}
+	<button type="submit">{{ i.date + " " + i.time }}</button>	
+{% endfor %}
+</div>
+{% endblock %}

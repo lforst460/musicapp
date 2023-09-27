@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Your Available Times{% endblock %}
+{% block content %}<h1>Select a Date to Add to Calendar</h1>
+<div>
+<ul class="list-group list_group_flush" id="notes">
+{% for i in times %}
+	<li class="list-group-item" onclick="/schedule_item">{{ i.date + " " + i.time }}
+		{% if user.id == i.user_id %}
+		<button type="button" class="close" onClick="deleteTime({{i.id}}, {{user.id}})">
+		<span aria-hidden="true">&times;</span>
+		</button>
+		{% endif %}
+	</li>
+</ul>
+{% endfor %}
+</div>
+{% endblock %}
